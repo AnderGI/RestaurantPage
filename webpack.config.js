@@ -15,17 +15,22 @@ const rulesForCss = {
 };
 const rules = [rulesForJs, rulesForCss];
 
-module.exports = {
-  //entry : './src/index.js'   by default
-  output: {
-    //filename : 'main.js'   by default
-    path: path.resolve(__dirname, "build"),
-  },
-  module: {
-    rules: rules,
-  },
-  devServer: {
-    port: 3000,
-  },
-  plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+module.exports = (env, argv) => {
+  const { mode } = argv;
+  const isProduction = mode === "production";
+  return {
+    //entry : './src/index.js'   by default
+    output: {
+      filename: isProduction ? "[name].[contenthash].js" : "main.js",
+      path: path.resolve(__dirname, "build"),
+      clean: true,
+    },
+    module: {
+      rules: rules,
+    },
+    devServer: {
+      port: 3000,
+    },
+    plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+  };
 };
