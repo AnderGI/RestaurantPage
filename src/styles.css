@@ -5,6 +5,7 @@
   font-size: 16px;
   --quoteFont: "Kaushan Script", cursive;
   --backgroundColor: #fafafa;
+  --imgBorderColor: #e5e7e8;
 }
 
 body {
@@ -69,9 +70,7 @@ section#mainBanner {
   background-position: center;
   background-size: cover;
   position: relative;
-  border-radius: 1em;
-  box-shadow: 0px 0px 21px -2px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0px 0px 21px -2px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--imgBorderColor);
 }
 
 section#mainBanner blockquote {
