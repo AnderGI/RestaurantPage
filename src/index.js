@@ -1,5 +1,6 @@
 import "./styles.css";
-import { animateSlider } from "./Modules/slider";
+import { scrolledClassHeader } from "./Modules/addHeaderBackground";
 
 //every second animate the slider
 //setInterval(animateSlider, 3000);
+window.addEventListener("scroll", scrolledClassHeader);
