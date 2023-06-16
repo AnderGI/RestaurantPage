@@ -81,7 +81,7 @@ body {
 }
 
 /*Home Page*/
-main.homePage section#mainBanner {
+main section#mainBanner {
   width: 100%;
   height: 30em;
   background-image: url("./images/burger_eat.jpg");
@@ -91,7 +91,7 @@ main.homePage section#mainBanner {
   border: 1px solid var(--imgBorderColor);
 }
 
-main.homePage section#mainBanner blockquote {
+main section#mainBanner blockquote {
   position: absolute;
   right: 50%;
   transform: translateX(50%);
@@ -103,7 +103,7 @@ main.homePage section#mainBanner blockquote {
   letter-spacing: 0.1em;
 }
 
-main.homePage section#disclaimer {
+main section#disclaimer {
   margin-top: 2em;
   background-color: var(--backgroundDisclaimer);
   text-align: center;
@@ -111,16 +111,16 @@ main.homePage section#disclaimer {
   padding: 2em 0.2em;
 }
 
-main.homePage section#disclaimer a {
+main section#disclaimer a {
   color: red;
 }
 
-main.homePage section#disclaimer h1 {
+main section#disclaimer h1 {
   font-size: 2rem;
   letter-spacing: 0.1em;
 }
 
-main.homePage section#disclaimer form {
+main section#disclaimer form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,16 +128,16 @@ main.homePage section#disclaimer form {
   row-gap: 1.5em;
 }
 
-main.homePage section#disclaimer form input[type="submit"] {
+main section#disclaimer form input[type="submit"] {
   background-color: var(--backgroundColor);
   border: none;
   padding: 0.5em 2em;
 }
 
-main.homePage section#disclaimer form input[type="submit"]:hover {
+main section#disclaimer form input[type="submit"]:hover {
   cursor: pointer;
 }
-
+/*End of Home Page*/
 footer {
   text-align: center;
   letter-spacing: 0.1em;

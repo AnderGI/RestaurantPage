@@ -1,4 +1,4 @@
-function createNavBar() {
+function createHeaderNavBar() {
   const header = document.createElement("header");
   const generalNav = document.createElement("nav");
   const leftNav = document.createElement("nav");
@@ -98,21 +98,5 @@ function createHomePage() {
 
   return [mainBanner, disclaimerSection];
 }
-function createMenuPage() {
-  console.log("Menu Page");
-}
-function createContactPage() {
-  console.log("Contact Page");
-}
-function createHospitalPage() {
-  console.log("Hospital Page");
-}
 
-export {
-  createHomePage,
-  createContactPage,
-  createMenuPage,
-  createHospitalPage,
-  createNavBar,
-  createFooter,
-};
+export { createHomePage, createHeaderNavBar, createFooter };

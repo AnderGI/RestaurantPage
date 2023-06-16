@@ -1,51 +1,30 @@
 import { $ } from "./selectors";
-import {
-  createContactPage,
-  createHomePage,
-  createMenuPage,
-  createHospitalPage,
-  createNavBar,
-  createFooter,
-} from "./DOMCreator";
+import { createHeaderNavBar, createFooter, createHomePage } from "./DOMCreator";
+
 const contentDiv = $("#content");
 
-function appendNavBar() {
-  contentDiv.append(createNavBar());
+function appendHeaderNavBar() {
+  contentDiv.append(createHeaderNavBar());
 }
 
 function appendMainTag() {
   contentDiv.appendChild(document.createElement("main"));
 }
 
-function appendHomePage() {
-  const mainTag = $("#content main");
-  if ([...mainTag.classList].length > 0) mainTag.removeAttribute("class");
-  mainTag.classList.add("homePage");
-  mainTag.replaceChildren();
-  console.log(mainTag);
+function renderHomePage() {
+  //add header navbar to container
+  appendHeaderNavBar();
+  //append main to container
+  appendMainTag();
 
+  //render the home page (default) in main
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
   mainTag.append(...createHomePage());
+
+  //add footer in main
   mainTag.append(createFooter());
   contentDiv.append(mainTag);
 }
-function appendMenuPage() {
-  createMenuPage();
-  //mainTag.appendChild(createMenuPage());
-}
-function appendContactPage() {
-  createContactPage();
-  //mainTag.appendChild(createContactPage());
-}
-function appendHospitalPage() {
-  createHospitalPage();
-  //mainTag.appendChild(createHospitalPage());
-}
 
-export {
-  appendHomePage,
-  appendContactPage,
-  appendMenuPage,
-  appendHospitalPage,
-  appendNavBar,
-  appendMainTag,
-};
+export { renderHomePage };

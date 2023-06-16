@@ -1,18 +1,13 @@
 //Register events and call renderFunctions (call DOMelement creators and append it to main)
 import { $$ } from "./selectors";
 import { scrolledClassHeader } from "./addHeaderBackground";
-import {
-  appendHomePage,
-  appendContactPage,
-  appendMenuPage,
-  appendHospitalPage,
-} from "./DOMRenderer";
+import { renderHomePage } from "./DOMRenderer";
 
 const callRenderFunctions = {
-  home: appendHomePage,
-  menu: appendMenuPage,
-  "contact us": appendContactPage,
-  "nearest hospital": appendHospitalPage,
+  home: renderHomePage,
+  menu: console.log("menu"),
+  "contact us": console.log("contact"),
+  "nearest hospital": console.log("hospital"),
 };
 
 function registerNavLinkClicked() {
@@ -26,7 +21,7 @@ function registerNavLinkClicked() {
   if (!clikedLink.classList.contains("selected"))
     clikedLink.classList.add("selected");
 
-  callRenderFunctions[clikedLink.textContent.toLowerCase()]();
+  //callRenderFunctions[clikedLink.textContent.toLowerCase()]();
 }
 
 export function registerEvents() {
