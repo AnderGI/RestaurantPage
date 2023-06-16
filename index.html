@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   <script defer src="main.js"></script></head>
   <body>
@@ -11,45 +17,49 @@
         <nav>
           <nav>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Menu</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="#" class="navLink selected">Home</a></li>
+              <li><a href="#" class="navLink">Menu</a></li>
+              <li><a href="#" class="navLink">Contact Us</a></li>
             </ul>
           </nav>
           <h1 id="logo">Heart Attack Grill</h1>
           <nav>
             <ul>
-              <li><a href="#">Nearest Hospital</a></li>
+              <li><a href="#" class="navLink">Nearest Hospital</a></li>
             </ul>
           </nav>
         </nav>
-        <div id="imgSliderContainer">
-          <div id="imgSlider">
-            <div class="slide anorexia active">
-              <img src="./images/anorexia.jpg" alt="" />
-            </div>
-            <div class="slide burger">
-              <img src="./images/burger.jpg" alt="" />
-            </div>
-            <div class="slide butter">
-              <img src="./images/butter.jpg" alt="" />
-            </div>
-            <div class="slide fries">
-              <img src="./images/fires.jpg" alt="" />
-            </div>
-            <div class="slide peach">
-              <img src="./images/peach_cake.jpg" alt="" />
-            </div>
-          </div>
-          <div id="btnSlider">
-            <button class="active"></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-          </div>
-        </div>
       </header>
+      <main class="homePage">
+        <section id="mainBanner">
+          <blockquote>Fighting anorexia since 2005</blockquote>
+        </section>
+        <section id="disclaimer">
+          <h1>Disclaimer</h1>
+          <blockquote>
+            Our dishes defy the laws of portion control, cholesterol sanity, and
+            common sense.
+          </blockquote>
+          <form action="#" method="get">
+            <section>
+              <input
+                type="checkbox"
+                name="disclaimer"
+                value="checked"
+                id="disclaimer"
+              />
+              <label for="disclaimer"
+                >I have read the <a href="#">disclaimer</a> and agreed to the
+                <a href="#">terms of service</a></label
+              >
+            </section>
+            <input type="submit" value="I Accept" />
+          </form>
+        </section>
+      </main>
+      <footer>
+        <p>Tempting fate, one burger at a time.</p>
+      </footer>
     </div>
   </body>
 </html>
