@@ -4,14 +4,29 @@ import {
   createHomePage,
   createMenuPage,
   createHospitalPage,
+  createNavBar,
+  createFooter,
 } from "./DOMCreator";
-const mainTag = $("#content main");
+const contentDiv = $("#content");
+
+function appendNavBar() {
+  contentDiv.append(createNavBar());
+}
+
+function appendMainTag() {
+  contentDiv.appendChild(document.createElement("main"));
+}
 
 function appendHomePage() {
-  mainTag.removeAttribute("class");
+  const mainTag = $("#content main");
+  if ([...mainTag.classList].length > 0) mainTag.removeAttribute("class");
   mainTag.classList.add("homePage");
+  mainTag.replaceChildren();
+  console.log(mainTag);
 
   mainTag.append(...createHomePage());
+  mainTag.append(createFooter());
+  contentDiv.append(mainTag);
 }
 function appendMenuPage() {
   createMenuPage();
@@ -31,4 +46,6 @@ export {
   appendContactPage,
   appendMenuPage,
   appendHospitalPage,
+  appendNavBar,
+  appendMainTag,
 };

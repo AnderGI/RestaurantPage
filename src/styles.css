@@ -57,6 +57,7 @@ body {
 
 #content a.navLink.selected {
   font-weight: 700;
+  pointer-events: none;
 }
 
 #content ul a {

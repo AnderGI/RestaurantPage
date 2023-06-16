@@ -1,13 +1,12 @@
 //Register events and call renderFunctions (call DOMelement creators and append it to main)
 import { $$ } from "./selectors";
+import { scrolledClassHeader } from "./addHeaderBackground";
 import {
   appendHomePage,
   appendContactPage,
   appendMenuPage,
   appendHospitalPage,
 } from "./DOMRenderer";
-
-const navLinks = [...$$("#content a.navLink")];
 
 const callRenderFunctions = {
   home: appendHomePage,
@@ -17,6 +16,7 @@ const callRenderFunctions = {
 };
 
 function registerNavLinkClicked() {
+  const navLinks = [...$$("#content a.navLink")];
   navLinks
     .filter((link) => link.classList.contains("selected"))
     .forEach((link) => link.classList.remove("selected"));
@@ -30,6 +30,8 @@ function registerNavLinkClicked() {
 }
 
 export function registerEvents() {
+  const navLinks = [...$$("#content a.navLink")];
+  window.addEventListener("scroll", scrolledClassHeader);
   navLinks.forEach((link) => {
     link.addEventListener("click", registerNavLinkClicked);
   });

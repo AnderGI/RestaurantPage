@@ -1,3 +1,50 @@
+function createNavBar() {
+  const header = document.createElement("header");
+  const generalNav = document.createElement("nav");
+  const leftNav = document.createElement("nav");
+  const leftNavUl = document.createElement("ul");
+
+  for (let list = 1; list <= 3; list++) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.setAttribute("href", "#");
+    a.setAttribute("class", "navLink");
+    if (list === 1) {
+      a.classList.add("selected");
+      a.append("Home");
+    } else if (list === 2) {
+      a.append("Menu");
+    } else {
+      a.append("Contact Us");
+    }
+
+    li.appendChild(a);
+    leftNavUl.append(li);
+  }
+  leftNav.appendChild(leftNavUl);
+  generalNav.appendChild(leftNav);
+
+  const navbarLogo = document.createElement("h1");
+  navbarLogo.setAttribute("id", "logo");
+  navbarLogo.append("Heart Attack Grill");
+  generalNav.appendChild(navbarLogo);
+
+  const rightNavbar = document.createElement("nav");
+  rightNavbar.innerHTML =
+    '<ul><li><a href="#" class="navLink">Nearest Hospital</a></li></ul>';
+  generalNav.appendChild(rightNavbar);
+
+  header.appendChild(generalNav);
+
+  return header;
+}
+
+function createFooter() {
+  const footer = document.createElement("footer");
+  footer.innerHTML = "<p>Tempting fate, one burger at a time.</p>";
+  return footer;
+}
+
 function createHomePage() {
   //Main Banner
   const mainBanner = document.createElement("section");
@@ -66,4 +113,6 @@ export {
   createContactPage,
   createMenuPage,
   createHospitalPage,
+  createNavBar,
+  createFooter,
 };
