@@ -1,3 +1,90 @@
+const menuItems = [
+  {
+    name: "Single Bypass Burger",
+    price: 9.7,
+    discount: false,
+    extraIngredients: "5 bacon slices",
+    extraIngredientsPrice: 0.92,
+  },
+  {
+    name: "Double Bypass Burger",
+    price: 11.55,
+    discount: false,
+    extraIngredients: "10 bacon slices",
+    extraIngredientsPrice: 1.85,
+  },
+  {
+    name: "Triple Bypass Burger",
+    price: 13.63,
+    discount: false,
+    extraIngredients: "15 bacon slices",
+    extraIngredientsPrice: 2.75,
+  },
+  {
+    name: "Quadruple Bypass Burger",
+    price: 15.01,
+    discount: false,
+    extraIngredients: "20 bacon slices",
+    extraIngredientsPrice: 3.7,
+  },
+  {
+    name: "Quintuple Bypass Burger",
+    price: 18.01,
+    discount: false,
+    extraIngredients: "25 bacon slices",
+    extraIngredientsPrice: 4.62,
+  },
+  {
+    name: "Sextuple Bypass Burger",
+    price: 20.09,
+    discount: false,
+    extraIngredients: "30 bacon slices",
+    extraIngredientsPrice: 5.64,
+  },
+  {
+    name: "Septuple Bypass Burger",
+    price: 21.02,
+    discount: false,
+    extraIngredients: "35 bacon slices",
+    extraIngredientsPrice: 6.47,
+  },
+  {
+    name: "Octuple Bypass Burger",
+    price: 24.02,
+    discount: false,
+    extraIngredients: "40 bacon slices",
+    extraIngredientsPrice: 7.39,
+  },
+  {
+    name: "1/2 Pound Coromary Dog",
+    price: 9.47,
+    discount: false,
+    extraIngredients: "10 bacon slices",
+    extraIngredientsPrice: 1.85,
+  },
+  {
+    name: "Curvyliner Fries",
+    price: 9.65,
+    discount: false,
+    extraIngredients: "Extra Butter Souce",
+    extraIngredientsPrice: 2.98,
+  },
+  {
+    name: "ButterFat Shake",
+    price: 4.62,
+    discount: false,
+    extraIngredients: "Extra butter fat",
+    extraIngredientsPrice: 4.2,
+  },
+  {
+    name: "1/2 Fatty Chessecake with white chocolateand organic butter",
+    price: 16.25,
+    discount: false,
+    extraIngredients: "Healthy berries buried with chocolate",
+    extraIngredientsPrice: 5.7,
+  },
+];
+//11
 function createHeaderNavBar() {
   const header = document.createElement("header");
   const generalNav = document.createElement("nav");
@@ -98,5 +185,7 @@ function createHomePage() {
 
   return [mainBanner, disclaimerSection];
 }
+
+function createMenuPage() {}
 
 export { createHomePage, createHeaderNavBar, createFooter };
