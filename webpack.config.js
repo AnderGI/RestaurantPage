@@ -32,5 +32,6 @@ module.exports = (env, argv) => {
       port: 3000,
     },
     plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+    devtool: "inline-source-map",
   };
 };
