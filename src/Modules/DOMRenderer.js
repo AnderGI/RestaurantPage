@@ -1,5 +1,11 @@
-import { $ } from "./selectors";
-import { createHeaderNavBar, createFooter, createHomePage } from "./DOMCreator";
+import { $, $$ } from "./selectors";
+import {
+  createHeaderNavBar,
+  createFooter,
+  createHomePage,
+  createMenuPageDishes,
+} from "./DOMCreator";
+import { dishesHoveredClassToggler } from "./DOMEvents";
 
 const contentDiv = $("#content");
 
@@ -12,8 +18,6 @@ function appendMainTag() {
 }
 
 function renderHomePage() {
-  //add header navbar to container
-  appendHeaderNavBar();
   //append main to container
   appendMainTag();
 
@@ -27,4 +31,19 @@ function renderHomePage() {
   contentDiv.append(mainTag);
 }
 
-export { renderHomePage };
+function renderMenuPage() {
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
+  mainTag.setAttribute("class", "menu");
+  mainTag.append(...createMenuPageDishes());
+  mainTag.append(createFooter());
+
+  //listen to events
+  [...$$("div.dish div")].forEach((dish) => {
+    dish.addEventListener("mouseover", (e) => {
+      dishesHoveredClassToggler(e);
+    });
+  });
+}
+
+export { appendHeaderNavBar, renderHomePage, renderMenuPage };

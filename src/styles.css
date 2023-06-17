@@ -65,7 +65,11 @@ body {
 }
 
 #content header.scrolled {
-  background-color: rgba(229, 231, 232, 0.75);
+  background-color: rgba(42, 43, 43, 0.75);
+}
+
+#content header.scrolled * {
+  color: var(--backgroundColor);
 }
 
 #content header > nav nav:first-of-type {
@@ -142,38 +146,36 @@ main section#disclaimer form input[type="submit"]:hover {
 /*Menu Page*/
 main.menu {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-auto-flow: row;
+  row-gap: 2em;
 }
 
 main.menu .dish {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  row-gap: 0.5em;
+  width: 60%;
+  margin: auto;
 }
 
 .dish-image {
   width: 300px; /* Adjust the size as needed */
   height: 250px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  background-image: url("./images/burger1.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.dish-details {
-  margin-left: 20px;
-}
-
 .dish-details h2 {
-  font-size: 24px;
+  font-size: 1rem;
 }
 
 .dish-details p {
   margin: 5px 0;
-  font-size: 16px;
+  font-size: 0.8rem;
 }
 
 .dish-image,
@@ -189,7 +191,7 @@ main.menu .dish {
 }
 
 /*End of Menu Page*/
-footer {
+#content footer {
   text-align: center;
   letter-spacing: 0.1em;
   padding: 0.75em 0.5em;

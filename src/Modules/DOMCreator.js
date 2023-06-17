@@ -198,6 +198,51 @@ function createHomePage() {
   return [mainBanner, disclaimerSection];
 }
 
-function createMenuPage() {}
+function createMenuPageDishes() {
+  const dishes = [];
+  for (const item of menuItems) {
+    const {
+      name,
+      price,
+      discount,
+      extraIngredients,
+      extraIngredientsPrice,
+      url,
+    } = item;
 
-export { createHomePage, createHeaderNavBar, createFooter };
+    const dishDiv = document.createElement("div");
+    dishDiv.setAttribute("class", "dish");
+
+    const dishImageDiv = document.createElement("div");
+    dishImageDiv.style.backgroundImage = `url(${url})`;
+    dishImageDiv.setAttribute("class", "dish-image");
+    dishDiv.append(dishImageDiv);
+
+    const dishDetailsDiv = document.createElement("div");
+    dishDetailsDiv.setAttribute("class", "dish-details");
+    const h2 = document.createElement("h2");
+    h2.textContent = name;
+    dishDetailsDiv.append(h2);
+    for (let i = 1; i <= 3; i++) {
+      const p = document.createElement("p");
+      if (i === 1) p.textContent = `Price : $${price}`;
+      if (i === 2) p.textContent = `Extra Ingredients : ${extraIngredients}`;
+      if (i === 3)
+        p.textContent = `Extra Ingredients Price : $${extraIngredientsPrice}`;
+      dishDetailsDiv.append(p);
+    }
+
+    dishDetailsDiv.classList.add("hovered");
+    dishDiv.append(dishDetailsDiv);
+    dishes.push(dishDiv);
+  }
+
+  return dishes;
+}
+
+export {
+  createHomePage,
+  createHeaderNavBar,
+  createFooter,
+  createMenuPageDishes,
+};
