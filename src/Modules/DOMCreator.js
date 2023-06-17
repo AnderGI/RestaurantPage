@@ -5,6 +5,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "5 bacon slices",
     extraIngredientsPrice: 0.92,
+    url: "./images/burger.jpg",
   },
   {
     name: "Double Bypass Burger",
@@ -12,6 +13,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "10 bacon slices",
     extraIngredientsPrice: 1.85,
+    url: "./images/burger1.jpg",
   },
   {
     name: "Triple Bypass Burger",
@@ -19,6 +21,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "15 bacon slices",
     extraIngredientsPrice: 2.75,
+    url: "./images/burger2.jpg",
   },
   {
     name: "Quadruple Bypass Burger",
@@ -26,6 +29,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "20 bacon slices",
     extraIngredientsPrice: 3.7,
+    url: "./images/burger3.jpg",
   },
   {
     name: "Quintuple Bypass Burger",
@@ -33,6 +37,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "25 bacon slices",
     extraIngredientsPrice: 4.62,
+    url: "./images/burger4.jpg",
   },
   {
     name: "Sextuple Bypass Burger",
@@ -40,6 +45,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "30 bacon slices",
     extraIngredientsPrice: 5.64,
+    url: "./images/burger5.jpg",
   },
   {
     name: "Septuple Bypass Burger",
@@ -47,6 +53,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "35 bacon slices",
     extraIngredientsPrice: 6.47,
+    url: "./images/burger7.jpg",
   },
   {
     name: "Octuple Bypass Burger",
@@ -54,6 +61,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "40 bacon slices",
     extraIngredientsPrice: 7.39,
+    url: "./images/burger8.jpg",
   },
   {
     name: "1/2 Pound Coromary Dog",
@@ -61,6 +69,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "10 bacon slices",
     extraIngredientsPrice: 1.85,
+    url: "./images/hotdog.jpg",
   },
   {
     name: "Curvyliner Fries",
@@ -68,6 +77,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "Extra Butter Souce",
     extraIngredientsPrice: 2.98,
+    url: "./images/frenchFries.jpg",
   },
   {
     name: "ButterFat Shake",
@@ -75,6 +85,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "Extra butter fat",
     extraIngredientsPrice: 4.2,
+    url: "./images/shake.jpg",
   },
   {
     name: "1/2 Fatty Chessecake with white chocolateand organic butter",
@@ -82,6 +93,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "Healthy berries buried with chocolate",
     extraIngredientsPrice: 5.7,
+    url: "./images/chesseCake.jpg",
   },
 ];
 //11
