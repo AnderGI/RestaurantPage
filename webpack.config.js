@@ -13,7 +13,17 @@ const rulesForCss = {
   test: /\.css$/,
   use: ["style-loader", "css-loader"],
 };
-const rules = [rulesForJs, rulesForCss];
+
+const rulesForImages = {
+  test: /\.(png|jpe?g|gif)$/i,
+  use: [
+    {
+      loader: "file-loader",
+    },
+  ],
+};
+
+const rules = [rulesForJs, rulesForCss, rulesForImages];
 
 module.exports = (env, argv) => {
   const { mode } = argv;

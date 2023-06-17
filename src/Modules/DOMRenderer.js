@@ -1,4 +1,6 @@
 import { $, $$ } from "./selectors";
+import { registerNavLinkClicked } from "./DOMEvents";
+import { scrolledClassHeader } from "./addHeaderBackground";
 import {
   createHeaderNavBar,
   createFooter,
@@ -11,6 +13,11 @@ const contentDiv = $("#content");
 
 function appendHeaderNavBar() {
   contentDiv.append(createHeaderNavBar());
+  const navLinks = [...$$("header a")];
+  navLinks.forEach((link) => {
+    link.addEventListener("click", registerNavLinkClicked);
+  });
+  window.addEventListener("scroll", scrolledClassHeader);
 }
 
 function appendMainTag() {

@@ -1,3 +1,17 @@
+import BurgerEat from "../images/burger_eat.jpg";
+import Burger from "../images/burger.jpg";
+import Burger1 from "../images/burger1.png";
+import Burger2 from "../images/burger2.png";
+import Burger3 from "../images/burger3.png";
+import Burger4 from "../images/burger4.png";
+import Burger5 from "../images/burger5.png";
+import Burger7 from "../images/burger7.png";
+import Burger8 from "../images/burger8.png";
+import Hotdog from "../images/hotdog.jpg";
+import Shake from "../images/shake.jpg";
+import Fries from "../images/frenchFries.jpg";
+import Chessecake from "../images/chesseCake.jpg";
+
 const menuItems = [
   {
     name: "Single Bypass Burger",
@@ -5,7 +19,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "5 bacon slices",
     extraIngredientsPrice: 0.92,
-    url: "./images/burger.jpg",
+    image: Burger,
   },
   {
     name: "Double Bypass Burger",
@@ -13,7 +27,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "10 bacon slices",
     extraIngredientsPrice: 1.85,
-    url: "./images/burger1.jpg",
+    image: Burger1,
   },
   {
     name: "Triple Bypass Burger",
@@ -21,7 +35,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "15 bacon slices",
     extraIngredientsPrice: 2.75,
-    url: "./images/burger2.jpg",
+    image: Burger2,
   },
   {
     name: "Quadruple Bypass Burger",
@@ -29,7 +43,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "20 bacon slices",
     extraIngredientsPrice: 3.7,
-    url: "./images/burger3.jpg",
+    image: Burger3,
   },
   {
     name: "Quintuple Bypass Burger",
@@ -37,7 +51,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "25 bacon slices",
     extraIngredientsPrice: 4.62,
-    url: "./images/burger4.jpg",
+    image: Burger4,
   },
   {
     name: "Sextuple Bypass Burger",
@@ -45,7 +59,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "30 bacon slices",
     extraIngredientsPrice: 5.64,
-    url: "./images/burger5.jpg",
+    image: Burger5,
   },
   {
     name: "Septuple Bypass Burger",
@@ -53,7 +67,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "35 bacon slices",
     extraIngredientsPrice: 6.47,
-    url: "./images/burger7.jpg",
+    image: Burger7,
   },
   {
     name: "Octuple Bypass Burger",
@@ -61,7 +75,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "40 bacon slices",
     extraIngredientsPrice: 7.39,
-    url: "./images/burger8.jpg",
+    image: Burger8,
   },
   {
     name: "1/2 Pound Coromary Dog",
@@ -69,7 +83,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "10 bacon slices",
     extraIngredientsPrice: 1.85,
-    url: "./images/hotdog.jpg",
+    image: Hotdog,
   },
   {
     name: "Curvyliner Fries",
@@ -77,7 +91,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "Extra Butter Souce",
     extraIngredientsPrice: 2.98,
-    url: "./images/frenchFries.jpg",
+    image: Fries,
   },
   {
     name: "ButterFat Shake",
@@ -85,7 +99,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "Extra butter fat",
     extraIngredientsPrice: 4.2,
-    url: "./images/shake.jpg",
+    image: Shake,
   },
   {
     name: "1/2 Fatty Chessecake with white chocolateand organic butter",
@@ -93,7 +107,7 @@ const menuItems = [
     discount: false,
     extraIngredients: "Healthy berries buried with chocolate",
     extraIngredientsPrice: 5.7,
-    url: "./images/chesseCake.jpg",
+    image: Chessecake,
   },
 ];
 //11
@@ -148,6 +162,9 @@ function createHomePage() {
   //Main Banner
   const mainBanner = document.createElement("section");
   mainBanner.setAttribute("id", "mainBanner");
+  const img = document.createElement("img");
+  img.src = BurgerEat;
+  mainBanner.append(img);
   const bannerBlockquote = document.createElement("blockquote");
   bannerBlockquote.append("Fighting anorexia since 2005");
   mainBanner.appendChild(bannerBlockquote);
@@ -155,7 +172,6 @@ function createHomePage() {
   //Disclaimer Section
   const disclaimerSection = document.createElement("section");
   disclaimerSection.setAttribute("id", "disclaimer");
-
   const disclaimerTitle = document.createElement("h1");
   disclaimerTitle.append("Disclaimer");
   disclaimerSection.append(disclaimerTitle);
@@ -207,14 +223,16 @@ function createMenuPageDishes() {
       discount,
       extraIngredients,
       extraIngredientsPrice,
-      url,
+      image,
     } = item;
 
     const dishDiv = document.createElement("div");
     dishDiv.setAttribute("class", "dish");
 
     const dishImageDiv = document.createElement("div");
-    dishImageDiv.style.backgroundImage = `url(${url})`;
+    const img = document.createElement("img");
+    img.src = image;
+    dishImageDiv.append(img);
     dishImageDiv.setAttribute("class", "dish-image");
     dishDiv.append(dishImageDiv);
 

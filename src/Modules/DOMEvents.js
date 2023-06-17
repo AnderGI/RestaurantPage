@@ -10,7 +10,7 @@ const callRenderFunctions = {
   "nearest hospital": console.log("hospital"),
 };
 
-function registerNavLinkClicked() {
+export function registerNavLinkClicked() {
   const navLinks = [...$$("#content a.navLink")];
   navLinks
     .filter((link) => link.classList.contains("selected"))
@@ -41,12 +41,4 @@ export function dishesHoveredClassToggler(e) {
       previousElementSibling.classList.add("hovered");
     }
   }
-}
-
-export function registerEvents() {
-  const navLinks = [...$$("#content a.navLink")];
-  window.addEventListener("scroll", scrolledClassHeader);
-  navLinks.forEach((link) => {
-    link.addEventListener("click", registerNavLinkClicked);
-  });
 }

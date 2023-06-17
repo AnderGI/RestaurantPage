@@ -88,11 +88,14 @@ body {
 main section#mainBanner {
   width: 100%;
   height: 30em;
-  background-image: url("./images/burger_eat.jpg");
-  background-position: center;
-  background-size: cover;
   position: relative;
   border: 1px solid var(--imgBorderColor);
+}
+
+main section#mainBanner img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 main section#mainBanner blockquote {
@@ -164,9 +167,12 @@ main.menu .dish {
   width: 300px; /* Adjust the size as needed */
   height: 250px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+.dish-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
 .dish-details h2 {
