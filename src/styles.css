@@ -10,7 +10,7 @@
 }
 
 body {
-  padding: 0.5em 1em;
+  padding: 0.5em 2em;
   padding-top: 0em;
   min-height: 100vh;
   margin: 0;
@@ -57,6 +57,7 @@ body {
 
 #content a.navLink.selected {
   font-weight: 700;
+  pointer-events: none;
 }
 
 #content ul a {
@@ -64,7 +65,11 @@ body {
 }
 
 #content header.scrolled {
-  background-color: rgba(229, 231, 232, 0.75);
+  background-color: rgba(42, 43, 43, 0.75);
+}
+
+#content header.scrolled * {
+  color: var(--backgroundColor);
 }
 
 #content header > nav nav:first-of-type {
@@ -80,17 +85,20 @@ body {
 }
 
 /*Home Page*/
-main.homePage section#mainBanner {
+main section#mainBanner {
   width: 100%;
   height: 30em;
-  background-image: url("./images/burger_eat.jpg");
-  background-position: center;
-  background-size: cover;
   position: relative;
   border: 1px solid var(--imgBorderColor);
 }
 
-main.homePage section#mainBanner blockquote {
+main section#mainBanner img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+main section#mainBanner blockquote {
   position: absolute;
   right: 50%;
   transform: translateX(50%);
@@ -102,7 +110,7 @@ main.homePage section#mainBanner blockquote {
   letter-spacing: 0.1em;
 }
 
-main.homePage section#disclaimer {
+main section#disclaimer {
   margin-top: 2em;
   background-color: var(--backgroundDisclaimer);
   text-align: center;
@@ -110,16 +118,16 @@ main.homePage section#disclaimer {
   padding: 2em 0.2em;
 }
 
-main.homePage section#disclaimer a {
+main section#disclaimer a {
   color: red;
 }
 
-main.homePage section#disclaimer h1 {
+main section#disclaimer h1 {
   font-size: 2rem;
   letter-spacing: 0.1em;
 }
 
-main.homePage section#disclaimer form {
+main section#disclaimer form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,17 +135,75 @@ main.homePage section#disclaimer form {
   row-gap: 1.5em;
 }
 
-main.homePage section#disclaimer form input[type="submit"] {
+main section#disclaimer form input[type="submit"] {
   background-color: var(--backgroundColor);
   border: none;
   padding: 0.5em 2em;
 }
 
-main.homePage section#disclaimer form input[type="submit"]:hover {
+main section#disclaimer form input[type="submit"]:hover {
   cursor: pointer;
 }
+/*End of Home Page*/
 
-footer {
+/*Menu Page*/
+main.menu {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-flow: row;
+  row-gap: 2em;
+}
+
+main.menu .dish {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  row-gap: 0.5em;
+  width: 60%;
+  margin: auto;
+}
+
+.dish-image {
+  width: 300px; /* Adjust the size as needed */
+  height: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.dish-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.dish-details h2 {
+  font-size: 1rem;
+}
+
+.dish-details p {
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
+
+.dish-image,
+.dish-details {
+  transition: opacity ease 20ms, filter ease 20ms, scale ease 20ms;
+}
+
+.dish-image.hovered,
+.dish-details.hovered {
+  opacity: 0.7;
+  filter: blur(0.2em);
+  transform: scale(0.9);
+}
+
+/*Nearest Hospital Main Page (google maps api)*/
+#map {
+  height: 500px;
+}
+
+/*End of Nearest Hospital Main Page*/
+/*End of Menu Page*/
+#content footer {
   text-align: center;
   letter-spacing: 0.1em;
   padding: 0.75em 0.5em;

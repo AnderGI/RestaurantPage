@@ -1,34 +1,77 @@
-import { $ } from "./selectors";
+import { $, $$ } from "./selectors";
+import { registerNavLinkClicked } from "./DOMEvents";
+import { scrolledClassHeader } from "./addHeaderBackground";
 import {
-  createContactPage,
+  createHeaderNavBar,
+  createFooter,
   createHomePage,
-  createMenuPage,
-  createHospitalPage,
+  createMenuPageDishes,
+  createNearestHospitalPage,
 } from "./DOMCreator";
-const mainTag = $("#content main");
+import { dishesHoveredClassToggler } from "./DOMEvents";
+import { renderMap } from "./GoogleMaps";
 
-function appendHomePage() {
-  mainTag.removeAttribute("class");
-  mainTag.classList.add("homePage");
+const contentDiv = $("#content");
 
+function appendHeaderNavBar() {
+  contentDiv.append(createHeaderNavBar());
+  const navLinks = [...$$("header a")];
+  navLinks.forEach((link) => {
+    link.addEventListener("click", registerNavLinkClicked);
+  });
+  window.addEventListener("scroll", scrolledClassHeader);
+}
+
+function appendMainTag() {
+  contentDiv.appendChild(document.createElement("main"));
+}
+
+function renderHomePage() {
+  //append main to container
+  appendMainTag();
+
+  //render the home page (default) in main
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
+  if (mainTag.classList.contains("menu")) {
+    mainTag.classList.remove("menu");
+  }
   mainTag.append(...createHomePage());
-}
-function appendMenuPage() {
-  createMenuPage();
-  //mainTag.appendChild(createMenuPage());
-}
-function appendContactPage() {
-  createContactPage();
-  //mainTag.appendChild(createContactPage());
-}
-function appendHospitalPage() {
-  createHospitalPage();
-  //mainTag.appendChild(createHospitalPage());
+
+  //add footer in main
+  mainTag.append(createFooter());
+  contentDiv.append(mainTag);
 }
 
+function renderMenuPage() {
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
+  mainTag.setAttribute("class", "menu");
+  mainTag.append(...createMenuPageDishes());
+  mainTag.append(createFooter());
+
+  //listen to events
+  [...$$("div.dish div")].forEach((dish) => {
+    dish.addEventListener("mouseover", (e) => {
+      dishesHoveredClassToggler(e);
+    });
+  });
+}
+
+function renderNearestHospitalPage() {
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
+  if (mainTag.classList.contains("menu")) {
+    mainTag.classList.remove("menu");
+  }
+  mainTag.append(createNearestHospitalPage());
+  mainTag.append(createFooter());
+  //render map
+  renderMap();
+}
 export {
-  appendHomePage,
-  appendContactPage,
-  appendMenuPage,
-  appendHospitalPage,
+  appendHeaderNavBar,
+  renderHomePage,
+  renderMenuPage,
+  renderNearestHospitalPage,
 };

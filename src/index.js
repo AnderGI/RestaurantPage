@@ -1,7 +1,9 @@
 import "./styles.css";
-import { scrolledClassHeader } from "./Modules/addHeaderBackground";
 import { registerEvents } from "./Modules/DOMEvents";
-//every second animate the slider
-//setInterval(animateSlider, 3000);
-window.addEventListener("scroll", scrolledClassHeader);
-window.addEventListener("DOMContentLoaded", registerEvents);
+import { appendHeaderNavBar, renderHomePage } from "./Modules/DOMRenderer";
+
+window.addEventListener("DOMContentLoaded", function () {
+  appendHeaderNavBar();
+  //render the home page; the default one
+  renderHomePage();
+});

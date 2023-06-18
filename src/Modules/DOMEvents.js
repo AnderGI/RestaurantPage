@@ -1,22 +1,21 @@
 //Register events and call renderFunctions (call DOMelement creators and append it to main)
 import { $$ } from "./selectors";
+import { scrolledClassHeader } from "./addHeaderBackground";
 import {
-  appendHomePage,
-  appendContactPage,
-  appendMenuPage,
-  appendHospitalPage,
+  renderHomePage,
+  renderMenuPage,
+  renderNearestHospitalPage,
 } from "./DOMRenderer";
 
-const navLinks = [...$$("#content a.navLink")];
-
 const callRenderFunctions = {
-  home: appendHomePage,
-  menu: appendMenuPage,
-  "contact us": appendContactPage,
-  "nearest hospital": appendHospitalPage,
+  home: renderHomePage,
+  menu: renderMenuPage,
+  "contact us": console.log("contact"),
+  "nearest hospital": renderNearestHospitalPage,
 };
 
-function registerNavLinkClicked() {
+export function registerNavLinkClicked() {
+  const navLinks = [...$$("#content a.navLink")];
   navLinks
     .filter((link) => link.classList.contains("selected"))
     .forEach((link) => link.classList.remove("selected"));
@@ -29,8 +28,21 @@ function registerNavLinkClicked() {
   callRenderFunctions[clikedLink.textContent.toLowerCase()]();
 }
 
-export function registerEvents() {
-  navLinks.forEach((link) => {
-    link.addEventListener("click", registerNavLinkClicked);
-  });
+export function dishesHoveredClassToggler(e) {
+  const element = e.target;
+  //dish-details
+  //dish-image
+  if (element.classList.contains("hovered")) {
+    element.classList.remove("hovered");
+
+    if (element.classList.contains("dish-image")) {
+      const nextElementSibling = element.nextElementSibling;
+      nextElementSibling.classList.add("hovered");
+    }
+
+    if (element.classList.contains("dish-details")) {
+      const previousElementSibling = element.previousElementSibling;
+      previousElementSibling.classList.add("hovered");
+    }
+  }
 }
