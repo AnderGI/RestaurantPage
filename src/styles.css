@@ -202,6 +202,38 @@ main.menu .dish {
 }
 
 /*End of Nearest Hospital Main Page*/
+
+/*Contact Us Page*/
+main.contactUs {
+  display: grid;
+  grid-template-rows: 80% 20%;
+  grid-template-columns: 1fr;
+  position: relative;
+}
+
+main.contactUs::after {
+  content: "";
+  position: absolute;
+  height: 0.5em;
+  width: 20%;
+  top: -1em;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: var(--imgBorderColor);
+  border-radius: 1px;
+}
+
+main.contactUs address {
+  text-align: center;
+}
+
+main.contactUs address p {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+/*End of Contact Us Page*/
+
 /*End of Menu Page*/
 #content footer {
   text-align: center;

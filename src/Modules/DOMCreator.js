@@ -264,10 +264,27 @@ function createNearestHospitalPage() {
   return mapDiv;
 }
 
+function createContactUsPage() {
+  const details = {
+    street: "450 FREMONT STREET in DOWNTOWN LAS VEGAS",
+    phone: "702-901-1835",
+  };
+  const address = document.createElement("address");
+
+  for (const value of Object.values(details)) {
+    const p = document.createElement("p");
+    p.textContent = value;
+    address.append(p);
+  }
+
+  return address;
+}
+
 export {
   createHomePage,
   createHeaderNavBar,
   createFooter,
   createMenuPageDishes,
   createNearestHospitalPage,
+  createContactUsPage,
 };

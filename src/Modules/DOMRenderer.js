@@ -7,6 +7,7 @@ import {
   createHomePage,
   createMenuPageDishes,
   createNearestHospitalPage,
+  createContactUsPage,
 } from "./DOMCreator";
 import { dishesHoveredClassToggler } from "./DOMEvents";
 import { renderMap } from "./GoogleMaps";
@@ -64,14 +65,29 @@ function renderNearestHospitalPage() {
   if (mainTag.classList.contains("menu")) {
     mainTag.classList.remove("menu");
   }
+  if (mainTag.classList.contains("contactUs")) {
+    mainTag.classList.remove("menu");
+  }
   mainTag.append(createNearestHospitalPage());
   mainTag.append(createFooter());
   //render map
   renderMap();
+}
+
+function renderContactUsPage() {
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
+  if (mainTag.classList.contains("menu")) {
+    mainTag.classList.remove("menu");
+  }
+  mainTag.classList.add("contactUs");
+  mainTag.append(createContactUsPage());
+  mainTag.append(createFooter());
 }
 export {
   appendHeaderNavBar,
   renderHomePage,
   renderMenuPage,
   renderNearestHospitalPage,
+  renderContactUsPage,
 };
