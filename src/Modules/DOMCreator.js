@@ -258,9 +258,16 @@ function createMenuPageDishes() {
   return dishes;
 }
 
+function createNearestHospitalPage() {
+  const mapDiv = document.createElement("div");
+  mapDiv.setAttribute("id", "map");
+  return mapDiv;
+}
+
 export {
   createHomePage,
   createHeaderNavBar,
   createFooter,
   createMenuPageDishes,
+  createNearestHospitalPage,
 };

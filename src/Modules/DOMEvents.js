@@ -1,13 +1,17 @@
 //Register events and call renderFunctions (call DOMelement creators and append it to main)
 import { $$ } from "./selectors";
 import { scrolledClassHeader } from "./addHeaderBackground";
-import { renderHomePage, renderMenuPage } from "./DOMRenderer";
+import {
+  renderHomePage,
+  renderMenuPage,
+  renderNearestHospitalPage,
+} from "./DOMRenderer";
 
 const callRenderFunctions = {
   home: renderHomePage,
   menu: renderMenuPage,
   "contact us": console.log("contact"),
-  "nearest hospital": console.log("hospital"),
+  "nearest hospital": renderNearestHospitalPage,
 };
 
 export function registerNavLinkClicked() {

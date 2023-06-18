@@ -5,18 +5,26 @@ const loader = new Loader({
   version: "weekly", // Replace with the desired version of the Google Maps API
 });
 
-loader.load().then(() => {
-  initMap();
-});
-
 function initMap() {
-  const location = { lat: -34.397, lng: 150.644 };
-  const map = new google.maps.Map(document.getElementById("map"), {
+  const location = { lat: 36.2859308, lng: -115.092762 };
+  const mapOptions = {
     center: location,
-    zoom: 8,
-  });
-  const marker = new google.maps.Marker({
+    zoom: 15,
+    mapTypeId: "satellite",
+  };
+
+  const map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+  const markerOptions = {
     position: location,
     map: map,
+    title: "North Las Vegas VA Medical Center",
+  };
+  const marker = new google.maps.Marker(markerOptions);
+}
+
+export function renderMap() {
+  loader.load().then(() => {
+    initMap();
   });
 }

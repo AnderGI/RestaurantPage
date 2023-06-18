@@ -6,8 +6,10 @@ import {
   createFooter,
   createHomePage,
   createMenuPageDishes,
+  createNearestHospitalPage,
 } from "./DOMCreator";
 import { dishesHoveredClassToggler } from "./DOMEvents";
+import { renderMap } from "./GoogleMaps";
 
 const contentDiv = $("#content");
 
@@ -31,6 +33,9 @@ function renderHomePage() {
   //render the home page (default) in main
   const mainTag = $("#content main");
   mainTag.replaceChildren();
+  if (mainTag.classList.contains("menu")) {
+    mainTag.classList.remove("menu");
+  }
   mainTag.append(...createHomePage());
 
   //add footer in main
@@ -53,4 +58,20 @@ function renderMenuPage() {
   });
 }
 
-export { appendHeaderNavBar, renderHomePage, renderMenuPage };
+function renderNearestHospitalPage() {
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
+  if (mainTag.classList.contains("menu")) {
+    mainTag.classList.remove("menu");
+  }
+  mainTag.append(createNearestHospitalPage());
+  mainTag.append(createFooter());
+  //render map
+  renderMap();
+}
+export {
+  appendHeaderNavBar,
+  renderHomePage,
+  renderMenuPage,
+  renderNearestHospitalPage,
+};
