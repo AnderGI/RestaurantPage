@@ -2,6 +2,7 @@
 import { $$ } from "./selectors";
 import { scrolledClassHeader } from "./addHeaderBackground";
 import {
+  renderContactUsPage,
   renderHomePage,
   renderMenuPage,
   renderNearestHospitalPage,
@@ -10,7 +11,7 @@ import {
 const callRenderFunctions = {
   home: renderHomePage,
   menu: renderMenuPage,
-  "contact us": console.log("contact"),
+  "contact us": renderContactUsPage,
   "nearest hospital": renderNearestHospitalPage,
 };
 
