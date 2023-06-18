@@ -196,6 +196,12 @@ main.menu .dish {
   transform: scale(0.9);
 }
 
+/*Nearest Hospital Main Page (google maps api)*/
+#map {
+  height: 500px;
+}
+
+/*End of Nearest Hospital Main Page*/
 /*End of Menu Page*/
 #content footer {
   text-align: center;

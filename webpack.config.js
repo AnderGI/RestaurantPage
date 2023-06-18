@@ -43,5 +43,14 @@ module.exports = (env, argv) => {
     },
     plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
     devtool: "inline-source-map",
+    resolve: {
+      alias: {
+        "@googlemaps/js-api-loader": path.resolve(
+          __dirname,
+          "node_modules",
+          "@googlemaps/js-api-loader"
+        ),
+      },
+    },
   };
 };
