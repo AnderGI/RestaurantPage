@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
 const path = require("path"); //native dependency for resolving absolute paths
 
 const rulesForJs = {
@@ -41,7 +42,10 @@ module.exports = (env, argv) => {
     devServer: {
       port: 3000,
     },
-    plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
+    plugins: [
+      new HtmlWebpackPlugin({ template: "./src/index.html" }),
+      new FaviconsWebpackPlugin("./src/images/logo.svg"),
+    ],
     devtool: "inline-source-map",
     resolve: {
       alias: {

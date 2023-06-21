@@ -14,11 +14,6 @@ import { renderMap } from "./GoogleMaps";
 
 const contentDiv = $("#content");
 
-function emptyMainContainer() {
-  const mainTag = $("#content main");
-  mainTag.replaceChildren();
-}
-
 function appendHeaderNavBar() {
   contentDiv.append(createHeaderNavBar());
   const navLinks = [...$$("header a")];
@@ -33,7 +28,8 @@ function appendMainTag() {
 }
 
 function renderHomePage() {
-  emptyMainContainer();
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
 
   //render the home page (default) in main
 
@@ -48,7 +44,8 @@ function renderHomePage() {
 }
 
 function renderMenuPage() {
-  emptyMainContainer();
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
   mainTag.setAttribute("class", "menu");
   mainTag.append(...createMenuPageDishes());
   mainTag.append(createFooter());
@@ -62,7 +59,8 @@ function renderMenuPage() {
 }
 
 function renderNearestHospitalPage() {
-  emptyMainContainer();
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
   if (mainTag.classList.contains("menu")) {
     mainTag.classList.remove("menu");
   }
@@ -76,7 +74,8 @@ function renderNearestHospitalPage() {
 }
 
 function renderContactUsPage() {
-  emptyMainContainer();
+  const mainTag = $("#content main");
+  mainTag.replaceChildren();
   if (mainTag.classList.contains("menu")) {
     mainTag.classList.remove("menu");
   }
