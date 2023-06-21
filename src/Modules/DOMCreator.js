@@ -277,6 +277,8 @@ function createContactUsPage() {
     address.append(p);
   }
 
+  address.append(document.createElement("span"));
+
   return address;
 }
 

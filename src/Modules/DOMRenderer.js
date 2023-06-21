@@ -28,12 +28,11 @@ function appendMainTag() {
 }
 
 function renderHomePage() {
-  //append main to container
-  appendMainTag();
-
-  //render the home page (default) in main
   const mainTag = $("#content main");
   mainTag.replaceChildren();
+
+  //render the home page (default) in main
+
   if (mainTag.classList.contains("menu")) {
     mainTag.classList.remove("menu");
   }
@@ -86,6 +85,7 @@ function renderContactUsPage() {
 }
 export {
   appendHeaderNavBar,
+  appendMainTag,
   renderHomePage,
   renderMenuPage,
   renderNearestHospitalPage,

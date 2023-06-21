@@ -211,7 +211,7 @@ main.contactUs {
   position: relative;
 }
 
-main.contactUs::after {
+main.contactUs span {
   content: "";
   position: absolute;
   height: 0.5em;
