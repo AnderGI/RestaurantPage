@@ -46,7 +46,7 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({ template: "./src/index.html" }),
       new FaviconsWebpackPlugin("./src/images/logo.svg"),
     ],
-    devtool: "inline-source-map",
+    devtool: false,
     resolve: {
       alias: {
         "@googlemaps/js-api-loader": path.resolve(
@@ -55,6 +55,11 @@ module.exports = (env, argv) => {
           "@googlemaps/js-api-loader"
         ),
       },
+    },
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000,
     },
   };
 };
