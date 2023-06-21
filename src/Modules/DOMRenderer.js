@@ -29,7 +29,7 @@ function appendMainTag() {
 
 function renderHomePage() {
   //append main to container
-  appendMainTag();
+  //appendMainTag();
 
   //render the home page (default) in main
   const mainTag = $("#content main");
@@ -86,6 +86,7 @@ function renderContactUsPage() {
 }
 export {
   appendHeaderNavBar,
+  appendMainTag,
   renderHomePage,
   renderMenuPage,
   renderNearestHospitalPage,

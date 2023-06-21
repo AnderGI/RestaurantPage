@@ -1,6 +1,6 @@
 //Register events and call renderFunctions (call DOMelement creators and append it to main)
 import { $$ } from "./selectors";
-import { scrolledClassHeader } from "./addHeaderBackground";
+
 import {
   renderContactUsPage,
   renderHomePage,
@@ -15,24 +15,23 @@ const callRenderFunctions = {
   "nearest hospital": renderNearestHospitalPage,
 };
 
-export function registerNavLinkClicked() {
+function registerNavLinkClicked() {
   const navLinks = [...$$("#content a.navLink")];
+  //remove the selected classlists from the one that have them and add to the one that is being clicked
   navLinks
     .filter((link) => link.classList.contains("selected"))
     .forEach((link) => link.classList.remove("selected"));
 
   const clikedLink = this;
 
-  if (!clikedLink.classList.contains("selected"))
-    clikedLink.classList.add("selected");
+  clikedLink.classList.add("selected");
 
   callRenderFunctions[clikedLink.textContent.toLowerCase()]();
 }
 
-export function dishesHoveredClassToggler(e) {
+function dishesHoveredClassToggler(e) {
   const element = e.target;
-  //dish-details
-  //dish-image
+
   if (element.classList.contains("hovered")) {
     element.classList.remove("hovered");
 
@@ -47,3 +46,5 @@ export function dishesHoveredClassToggler(e) {
     }
   }
 }
+
+export { registerNavLinkClicked, dishesHoveredClassToggler };
