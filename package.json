@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=production",
-    "start": "webpack serve --open --watch --mode=development"
+    "start": "webpack serve --open --watch --mode=development",
+    "ghPagesCommitBuild" : "git add build && git commit -m 'Initial build subtree commit'",
+    "pushGhPages": "git subtree push --prefix build origin gh-pages"
   },
   "repository": {
     "type": "git",
